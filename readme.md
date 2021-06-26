@@ -1,5 +1,5 @@
 # Build-a-bot quickstart guide
-Welcome to the readme of Build-a-bot - Python module, desiged for creating chatbots with ease. The design is similar to Flask: wrap your functions in decorators and see the magic happen.
+Welcome to the readme of Build-a-bot - a Python module, designed for creating chatbots with ease. The design is similar to Flask: wrap your functions in decorators and see the magic happen.
 
 ## Step 1: Write .json state config file
 First of all, you should describe the states of your bot. It is written in JSON format, just like this:
@@ -42,7 +42,7 @@ These functions should be the actions your bot will react with. **The first two 
 Currenty you have 3 types of action decorators in your arsenal.
 * ```@speech.greeting()``` - Call function if user does not have saved state (e.g. talking with bot for a first time).
 * ```@speech.reaction(statename:str, keywords:list)``` - Call function if specified keyword is met in the message and the dialog is in specific state. Used for choosing one of the options.
-* ```@speech.raw(statename:str)``` - Await for raw text input. Use this if you want to get
+* ```@speech.raw(statename:str)``` - Await for raw text input. Use this if you want to get telephones, names, addresses, everything that is not a set of keywords.
 
 ## Step 5: Initialize the event loop
 All you need to do is call ```speech.process(user_object, message)``` to activate necessary functions. If your bot will fail to understand user input, this function will return a line from the 'unknown' list you have stated earlier.
